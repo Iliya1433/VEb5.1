@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Ошибка{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="text-center text-danger">Ошибка</h2>
+            </div>
+            <div class="card-body">
+                <p class="text-center">{{ error }}</p>
+                <div class="d-grid gap-2">
+                    <a href="{{ url_for('index') }}" class="btn btn-primary">Вернуться на главную</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
