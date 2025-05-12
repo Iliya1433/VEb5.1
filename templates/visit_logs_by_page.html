@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Статистика посещений по страницам</h2>
+    
+    <div class="mb-3">
+        <a href="{{ url_for('visit_logs') }}" class="btn btn-secondary">Назад к журналу</a>
+        <a href="{{ url_for('export_visit_logs_by_page') }}" class="btn btn-success">Экспорт в CSV</a>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Страница</th>
+                <th>Количество посещений</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for path, count in page_stats %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ path }}</td>
+                <td>{{ count }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %} 
